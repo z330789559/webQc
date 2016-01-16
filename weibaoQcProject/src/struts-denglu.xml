@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+	<struts>
+	   <package name="p1" extends="base-default" namespace="/login">
+	   
+        <action  name="dologin" class="com.weibao.GongqijuAction.DengLuAction" method="login">
+         <result name="sucess" type="redirect">gqjList.action</result>
+         <!-- -不执行的sucess代码--> 
+         <result name="shibai">/WEB-INF/userJsp/shibai.jsp</result>
+      
+     </action>
+         <action name="cartGOSave"  class="com.weibao.GongqijuAction.CartAction" method="goOverperiod">
+	         <result name="success">/WEB-INF/GongqijuJsp/cart.jsp</result>
+	         </action>
+         <action name="cartSave"  class="com.weibao.GongqijuAction.CartAction" method="addCart">
+	      <result name="sucess">/WEB-INF/GongqijuJsp/gqj_list.jsp</result>
+	    </action>
+     <action  name="addGqj" class="com.weibao.GongqijuAction.AddGqjAction">
+         <result name="sucess">/WEB-INF/GongqijuJsp/addGqj.jsp</result>
+      
+     </action>
+     
+     <action name="gqjList" class="com.weibao.GongqijuAction.GqjListAction">
+	  <result name="sucess">/WEB-INF/GongqijuJsp/gqj_list.jsp</result>
+	</action>
+
+     
+	<action name="zengjiaGqj" class="com.weibao.GongqijuAction.ZengjiaAction">
+	  <result name="sucess" type="redirect">
+	    gqjList.action
+	    
+	   </result>
+	  <!-- -输入一个对象增加两个--> 
+	</action>
+	
+	
+	 <action name="gqjDelete" class="com.weibao.GongqijuAction.GqjDeleteAction" method="deleteRow">
+	  <result name="sucess" type="redirect">gqjList.action</result>
+	</action>
+	
+	
+	<action name="gqjDtail" class="com.weibao.GongqijuAction.GqjDtailAction" method="updateDetail">
+	  <result name="sucess">/WEB-INF/GongqijuJsp/gqjdetail.jsp</result>
+	</action>
+	
+	
+	
+	<action name="gqjUpdate" class="com.weibao.GongqijuAction.GqjUpdateAction" method="GqjUpdate">
+	  <result name="sucess" type="redirect">
+	    gqjList.action
+	  </result>
+	</action>
+	
+	<action name="gqjXuanZhong" class="com.weibao.GongqijuAction.XuanZhongAction">
+	  <result name="sucess" type="redirect">gqjList.action</result>
+	</action>
+	
+	<action name="gqjLookone" class="com.weibao.GongqijuAction.LookOneAction">
+	  <result name="sucess">/WEB-INF/GongqijuJsp/lookone.jsp</result>
+	</action>
+	
+	 
+	
+	</package>
+	</struts>

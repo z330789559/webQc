@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+	<struts>
+	   <package name="pro" namespace="/rs" extends="base-default">
+	   <!-- 
+	     <action name="findAllpro" class="" method="findAll">
+	       <result>/WEB-INF/test/index.jsp</result>
+	     </action>
+	      -->
+	     <!-- -自动排版不知道怎么配置action-->
+	      <action name="autoWork" class="com.weibao.test.action.TestAutoWork">
+	       <result name="success">/WEB-INF/test/autowork.jsp</result>
+	     </action>
+	     
+	           <action name="autoWork" class="com.weibao.test.action.TestAutoWork" method="sortWork">
+	       <result name="success">/WEB-INF/test/autowork.jsp</result>
+	     </action>
+	   </package>
+	</struts>

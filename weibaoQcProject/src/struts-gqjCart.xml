@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+	 
+	<struts>
+	  <package name="p2" extends="base-default" namespace="/rs">
+	    <action name="addItem" method="add" class="com.weibao.bean.action.GqjCartAction">
+	      <result name="sucess" type="redirect">
+	      gqjList.action
+	      </result>
+	    </action>
+	    
+	    
+	    <action name="base"  class="com.weibao.test.action.CartBaseAction">
+	      <result name="sucess">/WEB-INF/GongqijuJsp/cart.jsp</result>
+	    </action>
+	    
+	    
+	    
+	     <!-- -不执行的路径--> 
+	     <action name="deleteItem" method="delete" class="com.weibao.bean.action.GqjCartAction">
+	      <result name="sucess">/WEB-INF/GongqijuJsp/cart.jsp</result>
+	    </action>
+	    
+	     <!-- -不执行的路径--> 
+	     <action name="clearItem" method="clear" class="com.weibao.bean.action.GqjCartAction">
+	      <result name="sucess">/WEB-INF/GongqijuJsp/cart.jsp</result>
+	    </action>
+	    
+	     <!-- -不执行的路径--> 
+	    <action name="rollbackItem" method="rollback" class="com.weibao.bean.action.GqjCartAction">
+	      <result name="sucess">/WEB-INF/GongqijuJsp/cart.jsp</result>
+	    </action>
+	    
+	    
+	    
+	  </package>
+	</struts>

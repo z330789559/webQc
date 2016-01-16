@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+  <include file="struts-denglu.xml"/>
+  <include file="struts-gqjCart.xml"/>
+  <include file="struts-ygXx.xml"/>
+
+ <include file="struts-upload.xml"/> 
+  <include file="struts-test.xml"/> 
+
+  
+ <package name="base-default" extends="json-default" namespace="/rs">
+
+ 
+    <action name="chengGong" class="com.weibao.user.action.ChengGongAction">
+     
+      <result name="sucess">/WEB-INF/userJsp/chenggong.jsp</result>
+     </action> 
+    
+      <action name="error" class="com.weibao.user.action.ErrorAction">
+     
+      <result name="sucess">/WEB-INF/userJsp/error.jsp</result>
+     </action>
+    
+     <action  name="login" class="com.weibao.user.action.LoginAction">
+       <result name="sucess">/WEB-INF/userJsp/login.jsp</result>
+	</action>
+	
+	<action  name="regist" class="com.weibao.user.action.RegistAction">
+       <result name="sucess">/WEB-INF/userJsp/regist.jsp</result>
+	</action>
+	
+	<action  name="imageCode" class="com.weibao.user.action.ImageCodeAction">
+       <result name="sucess" type="stream">
+        <param name="inputName">is</param>
+       </result>
+	</action>
+     
+ 
+
+        <!-- 对应着MethodAction里面的execute方法 -->
+
+   
+
+        <!-- 对应着MethodAction里面的add方法 -->
+
+        <action name="registSe" class="com.weibao.user.action.UserSaveAction"
+
+method="saveUser">
+
+            <result name="sucess" >/WEB-INF/userJsp/chenggong.jsp</result>
+            <result name="fail">/WEB-INF/userJsp/regist.jsp</result>
+        </action>
+
+       
+
+
+     
+      <action name="userList" class="com.weibao.user.action.UserListAction" > 
+      <result name="sucess">/WEB-INF/userJsp/userlist.jsp</result>
+     </action>
+     
+     
+     
+      <action name="userdelet" class="com.weibao.user.action.DeleteAction" >
+      <result name="sucess" type="redirect">userList.action</result>   
+     </action>
+     
+     
+     <action name="userdetail" class="com.weibao.user.action.UserDetailAction" >
+      <result name="sucess">/WEB-INF/userJsp/userdetail.jsp</result>   
+     </action>
+     
+     
+     <action name="userupdate" class="com.weibao.user.action.UserUpdateAction" >
+      <result name="sucess" type="redirect">userList.action</result>   
+     </action>
+     
+     
+ </package>
+</struts>

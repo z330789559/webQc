@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+	<struts>
+	 <package name="p3" extends="base-default" namespace="/rs">
+	
+	  <action  name="addYg" class="com.weibao.YgXxAction.AddYgAction">
+         <result name="sucess">/WEB-INF/ygxxJsp/addYgxx.jsp</result>
+      
+     </action>
+     
+     <action name="ygList" class="com.weibao.YgXxAction.YgListAction">
+	  <result name="sucess">/WEB-INF/ygxxJsp/Yg_list.jsp</result>
+	</action>
+
+     
+	<action name="zengjiaYg" class="com.weibao.YgXxAction.ZengjiaYgAction">
+	  <result name="sucess" type="redirect">
+	    ygList.action
+	    
+	   </result>
+	  <!-- -输入一个对象增加两个--> 
+	</action>
+	
+	
+	 <action name="ygDelete" class="com.weibao.YgXxAction.YgDeleteAction" method="deleteRow">
+	  <result name="sucess" type="redirect">ygList.action</result>
+	</action>
+	
+	
+	<action name="ygDtail" class="com.weibao.YgXxAction.YgDtailAction" method="updateDetail">
+	  <result name="sucess">/WEB-INF/ygxxJsp/Ygdetail.jsp</result>
+	</action>
+	
+	
+	
+	<action name="ygUpdate" class="com.weibao.YgXxAction.YgUpdateAction" method="YgUpdate">
+	  <result name="sucess" type="redirect">
+	    ygList.action
+	  </result>
+	</action>
+	
+	<action name="ygXuanZhong" class="com.weibao.YgXxAction.XuanZhongYgAction">
+	  <result name="sucess" type="redirect">ygList.action</result>
+	</action>
+	
+	<action name="ygLookone" class="com.weibao.YgXxAction.LookOneAction">
+	  <result name="sucess">/WEB-INF/ygxxJsp/Yglookone.jsp</result>
+	</action>
+
+	 </package>
+	
+	</struts>

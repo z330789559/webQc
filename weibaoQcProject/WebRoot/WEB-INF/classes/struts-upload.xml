@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+	<struts>
+	  <package name="p8" extends="base-default" namespace="/up">
+	    <interceptors >
+	    <interceptor name="foo" class="com.weibao.UpLoad.FooInterceptor" />
+	    </interceptors>
+	   
+	    <action name="uploadform" class="com.weibao.UpLoad.UploadFormAction">
+	      <result name="sucess">/WEB-INF/test/uploadform.jsp</result>
+	    </action>
+	    <action name="upload" class="com.weibao.UpLoad.UploadAction">
+	       <result name="success">/WEB-INF/test/uploadform.jsp</result>
+	       	       <result name="login">/WEB-INF/userJsp/login.jsp</result>
+	      <interceptor-ref name="fileUpload">
+	        <param name="maximumSize">1024*1024*10</param>
+	      </interceptor-ref>
+	      <interceptor-ref name="basicStack"/>
+	    </action>
+	    <action name="download" class="com.weibao.UpLoad.DownAndShow" method="downLoad">
+	      <result name="success">/WEB-INF/test/filelist.jsp</result>
+	    </action>
+	     <action name="downFile" class="com.weibao.UpLoad.DownAndShow">  
+           <result name="success" type="stream">  
+                  <param name="contentType">${mimeType}</param>   
+               <param name="contentDisposition">attachment;fileName="${fileRealName}"</param>  
+               <param name="inputName">downLoadFile</param>  
+               <param name="bufferSize">1024*1024*10</param>  
+           </result>  
+       </action>  
+	    
+	  </package>
+	</struts>

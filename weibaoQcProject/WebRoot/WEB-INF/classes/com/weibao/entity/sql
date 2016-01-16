@@ -1,0 +1,12 @@
+create table t_ygXinxi(
+yg_id number(9),
+ygName varchar2(50),
+ygAge varchar2(50),
+ygGeneral varchar2(50),
+ygXueLi  varchar2(50),
+ygSchool varchar2(50),
+ygTeam varchar2(50),
+ygMinZu varchar2(50),
+ygJiguan varchar2(50),
+ygAddress varchar2(50)
+);

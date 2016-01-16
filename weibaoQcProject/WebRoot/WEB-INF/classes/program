@@ -1,0 +1,18 @@
+
+一、在分页功能上：其包为ShowAction ，struts-test.xml，/WebRoot/WEB-INF/test/index.jsp
+1、这个没有看懂具体的意思，代码已复制，其链接的jsp需要改动。
+ * 2、其中xml 文件没有配置，不知道该怎么配置xml文件。
+ * 3、如何根据jsp 中的代码配置action
+ 
+ 二、购物车的使用上：
+ 1、如何设置cart 以及cartItem，其在包：com.weibao.bean中
+ 2、对应的aciton 在com.weibao.bean.action中
+ 3、对应的工器具购物车 jsp包括/WEB-INF/GongqijuJsp/cart.jsp、/WEB-INF/GongqijuJsp/rollback.jsp
+ 4、对应的员工购物车 jsp包括/WEB-INF/ygxxJsp/Ygrollback.jsp、/WEB-INF/ygxxJsp/Ygxxcart.jsp
+ 5、对应的工器具action,struts-gqjCart.xml
+ 6、对应的员工action, struts-ygCart.xml
+ 三、对于工器具和员工信息的添加总是会出现两次的重复添加，但是id号不重复。
+ 四、时间comeDate-实时时间如何做减法，没有实现
+ 五、自动排班的action如何实现，Java class已经做出来了0--
+ 六、文件上传的文档如何实现并满足显示下载功能；
+           实例化的action xml文件已经做好

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+      <class name="com.weibao.entity.YuangongXinxi" table="t_ygXinxi">
+      
+      <id name="yg_id" column="yg_id">
+      <generator class="native"/>
+      </id>
+      <property name="ygName" column="ygName"/>
+      <property name="ygAge" column="ygAge"/>
+      <property name="ygGeneral" column="ygGeneral"/>
+      <property name="ygXueLi" column="ygXueLi"/>
+      <property name="ygSchool" column="ygSchool"/>
+      <property name="ygTeam" column="ygTeam"/>
+      <property name="ygMinZu" column="ygMinZu"/>
+      <property name="ygJiguan" column="ygJiguan"/>
+      <property name="ygAddress" column="ygAddress"/>
+
+      </class>
+    </hibernate-mapping>
